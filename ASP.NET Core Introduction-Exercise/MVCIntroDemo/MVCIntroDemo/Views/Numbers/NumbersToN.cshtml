@@ -1,0 +1,18 @@
+﻿@model int
+@{
+    ViewData["Title"] = $"Nums 1...{ViewBag.Count}";
+}
+<h2>@ViewData["Title"]</h2>
+<ul>
+@for (int num = 1; num <= Model; num++)
+{
+    <li>@num</li>
+
+}
+</ul>
+<input type="number" id="GetLimitInputId" value="@Model">
+<button class="btn btn-primary" onclick="SetLimtedNumbers()">Submit</button>
+@section Scripts{
+    <script src="~/js/numbers.js"></script>
+}
+
