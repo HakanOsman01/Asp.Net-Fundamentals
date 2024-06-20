@@ -9,7 +9,7 @@ namespace MVCIntroDemo.Controllers
     public class ProductController : Controller
     {
         private readonly IEnumerable<ProductViewModel> products
-            =new List<ProductViewModel>()
+          =new List<ProductViewModel>()
         {
             new ProductViewModel()
             {
@@ -33,8 +33,18 @@ namespace MVCIntroDemo.Controllers
 
 
         };
-        public IActionResult Index()
+
+        [ActionName("My-Product")]
+        public IActionResult Index(string keyword)
         {
+            if (keyword != null)
+            {
+                var product = this.products.Where(
+                    p => p.Name.ToLower()
+                    .Contains(keyword.ToLower()));
+                return View(product);
+            }
+
             return View(products);
         }
         public IActionResult ById(int id)
