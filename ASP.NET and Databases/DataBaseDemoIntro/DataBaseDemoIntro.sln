@@ -5,6 +5,8 @@ VisualStudioVersion = 17.5.33414.496
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataBaseDemoIntro", "DataBaseDemoIntro\DataBaseDemoIntro.csproj", "{FAB483B8-437C-4660-B098-5F1DD462F1AC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoEntityFramework", "DemoEntityFramework\DemoEntityFramework.csproj", "{2A91A312-9336-41D9-8612-27EE928414DD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{FAB483B8-437C-4660-B098-5F1DD462F1AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FAB483B8-437C-4660-B098-5F1DD462F1AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FAB483B8-437C-4660-B098-5F1DD462F1AC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2A91A312-9336-41D9-8612-27EE928414DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A91A312-9336-41D9-8612-27EE928414DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A91A312-9336-41D9-8612-27EE928414DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A91A312-9336-41D9-8612-27EE928414DD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
