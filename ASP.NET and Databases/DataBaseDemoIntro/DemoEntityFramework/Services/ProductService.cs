@@ -23,6 +23,15 @@ namespace DemoEntityFramework.Services
             await context.SaveChangesAsync();
         }
 
+        public async Task ClearAllProductsAsync()
+        {
+            foreach (var item in context.Products)
+            {
+                context.Products.Remove(item);
+            }
+            await context.SaveChangesAsync();
+        }
+
         public async Task DeleteProductAsync(int id)
         {
             var entity= await context.Products.FindAsync(id);

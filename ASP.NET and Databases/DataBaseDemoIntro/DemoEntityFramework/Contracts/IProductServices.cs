@@ -9,6 +9,7 @@ namespace DemoEntityFramework.Contracts
         Task AddProductAsync(ProductViewModel model);
         Task UpdateProductAsync(ProductViewModel model);
         Task DeleteProductAsync(int id);
+        Task ClearAllProductsAsync();
 
 
     }

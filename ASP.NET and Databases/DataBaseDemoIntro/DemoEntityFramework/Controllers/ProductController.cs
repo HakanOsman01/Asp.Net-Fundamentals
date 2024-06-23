@@ -55,6 +55,13 @@ namespace DemoEntityFramework.Controllers
            return RedirectToAction(nameof(Index));
 
         }
+        [HttpPost]
+        public async Task<IActionResult> Clear()
+        {
+            await productService.ClearAllProductsAsync();
+           
+            return RedirectToAction(nameof(Index),new ProductViewModel());
+        }
 
     }
 }
