@@ -21,9 +21,7 @@ namespace TaskBoardApp.Areas.Identity.Pages.Account
         public RegisterModel(
             UserManager<IdentityUser> userManager,
             IUserStore<IdentityUser> userStore,
-            SignInManager<IdentityUser> signInManager,
-            ILogger<RegisterModel> logger,
-            IEmailSender emailSender)
+            SignInManager<IdentityUser> signInManager)
         {
             _userManager = userManager;
             _userStore = userStore;
