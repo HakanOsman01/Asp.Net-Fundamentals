@@ -1,0 +1,19 @@
+﻿@model int
+@{
+    ViewData["Title"] = $"Count nums 1..{Model}";
+}
+<h2 class="text-center"> @ViewData["Title"]</h2>
+@for(int i=1;i<=Model;i++)
+{
+    <ul>
+        <li>@i</li>
+    </ul>
+
+}
+<form asp-action="Privacy">
+    <div class="form-group">
+        <label asp-for="@Model">Enter the number</label>
+        <input asp-for="@Model" class="form-control" />
+        <button type="submit">Submit</button>
+    </div>
+</form>
