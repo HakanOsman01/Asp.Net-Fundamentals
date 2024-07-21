@@ -11,7 +11,7 @@ namespace Ado.Net_Exercise
             SqlConnection sqlConnection = new SqlConnection(connectionsString);
             GetNumberOfVillains(sqlConnection);
             elements=Console.ReadLine().Split(' ').ToArray();
-            GetPermute(0);
+          
             
            
 

@@ -8,5 +8,6 @@
                 ON mv.MinionId = m.Id
                 GROUP BY v.Name,v.Id
             HAVING COUNT(mv.MinionId)>3";
+
     }
 }

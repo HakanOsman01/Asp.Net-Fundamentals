@@ -13,14 +13,10 @@ namespace Behaviors_Patterns
     {
         static void Main(string[] args)
         {
+            
+           
+           
 
-           int[] array = Console.ReadLine().Split(' ').Select(int.Parse).ToArray();
-            var soringStrategy = new SortClass<int>(new BubbleSortStrategy());
-            var sorted = soringStrategy.SortCollection(array);
-            Console.WriteLine(string.Join(' ',sorted));
-            
-            
-            
         }
     }
 }
