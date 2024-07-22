@@ -1,6 +1,7 @@
 ﻿using Behaviors_Patterns.Chains_of_responsibility;
 using Behaviors_Patterns.Command;
 using Behaviors_Patterns.Command.Commands;
+using Behaviors_Patterns.Memento;
 using Behaviors_Patterns.State;
 using Behaviors_Patterns.State.Contracts;
 using Behaviors_Patterns.State.Models;
@@ -16,17 +17,25 @@ namespace Behaviors_Patterns
         {
 
 
-            //      If paypal can't pay then bit coin
-            var bank = new Bank(100);          // Bank with balance 100
-            var paypal = new Paypal(200);      // Paypal with balance 200
-            var bitcoin = new Bitcoin(300);    // Bitcoin with balance 300
+            var editor = new Editor();
 
-            bank.SetNext(paypal);
-            paypal.SetNext(bitcoin);
+            //Type some stuff
+            editor.Type("This is the first sentence.");
+            editor.Type("This is second.");
 
-            // Let's try to pay using the first priority i.e. bank
-            bank.Pay(259);
+            // Save the state to restore to : This is the first sentence. This is second.
+            editor.Save();
 
+            //Type some more
+            editor.Type("This is third.");
+
+            //Output the content
+            Console.WriteLine(editor.Content); // This is the first sentence. This is second. This is third.
+
+            //Restoring to last saved state
+            editor.Restore();
+
+            Console.Write(editor.Content); // Th
         }
     }
 }
