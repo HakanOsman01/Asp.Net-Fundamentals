@@ -1,6 +1,7 @@
 ﻿using Behaviors_Patterns.Chains_of_responsibility;
 using Behaviors_Patterns.Command;
 using Behaviors_Patterns.Command.Commands;
+using Behaviors_Patterns.Mediator;
 using Behaviors_Patterns.Memento;
 using Behaviors_Patterns.State;
 using Behaviors_Patterns.State.Contracts;
@@ -16,26 +17,15 @@ namespace Behaviors_Patterns
         static void Main(string[] args)
         {
 
+            var mediator = new ChatRoom();
 
-            var editor = new Editor();
+            var john = new User("John", mediator);
+            var jane = new User("Jane", mediator);
 
-            //Type some stuff
-            editor.Type("This is the first sentence.");
-            editor.Type("This is second.");
+            john.Send("Hi there!");
+            jane.Send("Hey!");
 
-            // Save the state to restore to : This is the first sentence. This is second.
-            editor.Save();
 
-            //Type some more
-            editor.Type("This is third.");
-
-            //Output the content
-            Console.WriteLine(editor.Content); // This is the first sentence. This is second. This is third.
-
-            //Restoring to last saved state
-            editor.Restore();
-
-            Console.Write(editor.Content); // Th
         }
     }
 }
